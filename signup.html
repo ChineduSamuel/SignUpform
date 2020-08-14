@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">   <!-- ?Page Style -->
+    <link rel="stylesheet" href="style.css">   
     <title>TIIDELAB Signup Form</title>
     
 </head>
@@ -18,16 +18,15 @@
          height: 60%; width: 70%;
          margin: 100px auto;">
 
-<!-- Main page image -->
+
         <div class="instruction">
-            <img src="learning.png" alt="Learning" srcset="" style="max-width:100%;">
+            <img src="E-30.png" alt="Learning" srcset="" style="max-width:100%;">
         </div>
 
         <div class="form-container">
 
             <h3> Registration Form</h3>
 
-            <!-- Form elements -->
 
             <form action="" name="SignupForm" id="SignupForm" onsubmit="processForm()">
                 <input type="text" name="fullName" id="fullName" placeholder="Enter your Full Name" required>
@@ -44,14 +43,13 @@
 
         <div style="clear: left;"></div>
 
-        <!-- Script to enable form data submission -->
         <script>
             
             document.getElementById('SignupForm').addEventListener("submit", function (even) {
                 event.preventDefault();
             })
 
-            // function that submit data to server when submit button is clicked
+           
             function processForm() {
                 var fullName = document.getElementById('fullName').value
                 email = document.getElementById('email').value
@@ -60,10 +58,10 @@
                 cpassword = document.getElementById('confirmPassword').value
 
                 if (password != cpassword) {
-                    alert('password mismatch')
+                    alert('password mismatch!')
                 } else {
 
-                    //Format the forma input to JSON object
+           
                     var data = {
                         "fullName": fullName,
                         "email": email,
@@ -73,18 +71,23 @@
                         "roles": ["user"]
                     }
 
-                    // API for sending form data to server
                     fetch('https://api.openclass.ng/Register', {
                         method: 'POST',
                         body: JSON.stringify(data),
                         headers: {
-                            'Content-Type': 'application/json' //data is sent as JSON object to server
+                            'Content-Type': 'application/json' 
                         }
                     }).then(function (data) {
                         alert('Congrats')
                     })
+                    try {
+  nonExistentFunction();
+} catch (error) {
+  console.error("OOPS!!!, Something went wrong: ", error);
+  
 
                 }
+            }
             }
         </script>
 
