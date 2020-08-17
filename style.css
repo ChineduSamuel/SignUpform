@@ -11,8 +11,15 @@
             width: 85%;
             color: snow;
             font-size: 24px;
+            cursor: pointer;
+        
         }
 
+        .submit :hover{
+            background-color: tomato;
+        }
+
+        
         input:focus {
             background-color: salmon;
             color: seashell;
